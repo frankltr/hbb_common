@@ -2469,7 +2469,7 @@ pub mod keys {
     pub const OPTION_TRACKPAD_SPEED: &str = "trackpad-speed";
     pub const OPTION_REGISTER_DEVICE: &str = "register-device";
 
-    // buildin options
+    // built-in options
     pub const OPTION_DISPLAY_NAME: &str = "display-name";
     pub const OPTION_DISABLE_UDP: &str = "disable-udp";
     pub const OPTION_PRESET_DEVICE_GROUP_NAME: &str = "preset-device-group-name";
@@ -2482,6 +2482,10 @@ pub mod keys {
     pub const OPTION_HIDE_PROXY_SETTINGS: &str = "hide-proxy-settings";
     pub const OPTION_HIDE_REMOTE_PRINTER_SETTINGS: &str = "hide-remote-printer-settings";
     pub const OPTION_HIDE_WEBSOCKET_SETTINGS: &str = "hide-websocket-settings";
+    
+    // Connection punch-through options
+    pub const OPTION_ENABLE_UDP_PUNCH: &str = "enable-udp-punch";
+    pub const OPTION_ENABLE_IPV6_PUNCH: &str = "enable-ipv6-punch";
     pub const OPTION_HIDE_USERNAME_ON_CARD: &str = "hide-username-on-card";
     pub const OPTION_HIDE_HELP_CARDS: &str = "hide-help-cards";
     pub const OPTION_DEFAULT_CONNECT_PASSWORD: &str = "default-connect-password";
@@ -2491,6 +2495,7 @@ pub mod keys {
     pub const OPTION_ONE_WAY_FILE_TRANSFER: &str = "one-way-file-transfer";
     pub const OPTION_ALLOW_HTTPS_21114: &str = "allow-https-21114";
     pub const OPTION_ALLOW_HOSTNAME_AS_ID: &str = "allow-hostname-as-id";
+    pub const OPTION_HIDE_POWERED_BY_ME: &str = "hide-powered-by-me";
 
     // flutter local options
     pub const OPTION_FLUTTER_REMOTE_MENUBAR_STATE: &str = "remoteMenubarState";
@@ -2588,6 +2593,8 @@ pub mod keys {
         OPTION_ALLOW_REMOTE_CM_MODIFICATION,
         OPTION_ALLOW_AUTO_RECORD_OUTGOING,
         OPTION_VIDEO_SAVE_DIRECTORY,
+        OPTION_ENABLE_UDP_PUNCH,
+        OPTION_ENABLE_IPV6_PUNCH,
     ];
     // DEFAULT_SETTINGS, OVERWRITE_SETTINGS
     pub const KEYS_SETTINGS: &[&str] = &[
@@ -2657,8 +2664,10 @@ pub mod keys {
         OPTION_ALLOW_HTTPS_21114,
         OPTION_ALLOW_HOSTNAME_AS_ID,
         OPTION_REGISTER_DEVICE,
+        OPTION_HIDE_POWERED_BY_ME,
     ];
 }
+
 
 pub fn common_load<
     T: serde::Serialize + serde::de::DeserializeOwned + Default + std::fmt::Debug,
