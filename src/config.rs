@@ -297,6 +297,8 @@ pub struct PeerConfig {
     #[serde(flatten)]
     pub view_only: ViewOnly,
     #[serde(flatten)]
+    pub show_my_cursor: ShowMyCursor,
+    #[serde(flatten)]
     pub sync_init_clipboard: SyncInitClipboard,
     // Mouse wheel or touchpad scroll mode
     #[serde(
@@ -373,6 +375,7 @@ impl Default for PeerConfig {
             follow_remote_window: Default::default(),
             keyboard_mode: Default::default(),
             view_only: Default::default(),
+            show_my_cursor: Default::default(),
             reverse_mouse_wheel: Self::default_reverse_mouse_wheel(),
             displays_as_individual_windows: Self::default_displays_as_individual_windows(),
             use_all_my_displays_for_the_remote_session:
@@ -1682,6 +1685,13 @@ serde_field_bool!(
 );
 
 serde_field_bool!(
+    ShowMyCursor,
+    "show_my_cursor",
+    default_show_my_cursor,
+    "ShowMyCursor::default_show_my_cursor"
+);
+
+serde_field_bool!(
     SyncInitClipboard,
     "sync-init-clipboard",
     default_sync_init_clipboard,
@@ -2510,6 +2520,7 @@ pub mod keys {
     pub const OPTION_ALLOW_HTTPS_21114: &str = "allow-https-21114";
     pub const OPTION_ALLOW_HOSTNAME_AS_ID: &str = "allow-hostname-as-id";
     pub const OPTION_HIDE_POWERED_BY_ME: &str = "hide-powered-by-me";
+    pub const OPTION_MAIN_WINDOW_ALWAYS_ON_TOP: &str = "main-window-always-on-top";
 
     // flutter local options
     pub const OPTION_FLUTTER_REMOTE_MENUBAR_STATE: &str = "remoteMenubarState";
@@ -2682,6 +2693,7 @@ pub mod keys {
         OPTION_ALLOW_HOSTNAME_AS_ID,
         OPTION_REGISTER_DEVICE,
         OPTION_HIDE_POWERED_BY_ME,
+        OPTION_MAIN_WINDOW_ALWAYS_ON_TOP,
     ];
 }
 
